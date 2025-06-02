@@ -20,6 +20,12 @@ func (app *application) routes() http.Handler {
 
 		// Register User
 		v1.POST("/auth/register", app.registerUser)
+
+		// Attendees
+		v1.POST("/events/:id/attendees/:userId", app.addAttendeeToEvent)
+		v1.GET("/events/:id/attendees", app.getAttendeesForEvent)
+		v1.DELETE("/events/:id/attendees/:userId", app.deleteAttendeeFromEvent)
+		v1.GET("/attendees/:id/events", app.getEventsByAttendee)
 	}
 
 	return g
