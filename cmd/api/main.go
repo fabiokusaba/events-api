@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	_ "gin-events-api/docs"
 	"gin-events-api/internal/database"
 	"gin-events-api/internal/env"
 	"log"
@@ -9,6 +10,14 @@ import (
 	_ "github.com/joho/godotenv/autoload"
 	_ "github.com/mattn/go-sqlite3"
 )
+
+// @title Go Gin REST API
+// @version 1.0
+// @description A REST API in Go using Gin Framework
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
+// @description Enter your Bearer token in the format **Bearer &lt;token&gt;**
 
 type application struct {
 	port      int
